@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Big Data Analytics</h1>
+<p>We have a total of {{ count }} records </p>
+
+<div class="school-list">
+	<form name="sendKeyword" id="searchForm" action="/grades" method="POST" novalidate>
+
+                            <select name ="grade">
+                            {% for g in gradelist %}
+                            {% if g.grade != None %}
+                            <option value = "{{ g.grade }}">Grade {{ g.grade }}</option>
+                            {% endif %}
+                            {% endfor %}
+
+                            <div>
+                        <input type="submit" value="Submit">
+                        </div>
+	</ul>
+</div>
+
+{% endblock %}

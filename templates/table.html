@@ -1,0 +1,171 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container">
+  <h2>Table</h2>
+  <p>Grade: {{ grade }}</p>                                                                                      
+  <div class="table-striped table-responsive ">  
+
+  {% if checkins %}        
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>member_id</th>
+        <th>loan_amnt</th>
+        <th>funded_amnt</th>
+        <th>funded_amnt_inv</th>
+        <th>term</th>
+        <th>int_rate</th>  
+        <th>installment</th>
+        <th>grade</th>
+        <th>sub_grade</th>
+        <th>emp_title</th>
+        <th>emp_length</th>
+        <th>home_ownership</th>
+        <th>annual_inc</th>
+        <th>verification_status</th>
+        <th>issue_d</th>
+        <th>loan_status</th>
+        <th>pymnt_plan</th>
+        <th>purpose</th>
+        <th>zip_code</th>
+        <th>addr_state</th>
+        <th>dti</th>
+        <th>delinq_2yrs</th>
+        <th>earliest_cr_line</th>
+        <th>inq_last_6mths</th>
+        <th>mths_since_last_delinq</th>
+        <th>mths_since_last_record</th>
+        <th>open_acc</th>
+        <th>pub_rec</th>
+        <th>revol_bal</th>
+        <th>revol_util</th>
+        <th>total_acc</th>
+        <th>initial_list_status</th>
+        <th>out_prncp</th>
+        <th>out_prncp_inv</th>
+        <th>total_pymnt</th>
+        <th>total_pymnt_inv</th>
+        <th>total_rec_prncp</th>
+        <th>total_rec_int</th>
+        <th>total_rec_late_fee</th>
+        <th>recoveries</th>
+        <th>collection_recovery_fee</th>
+        <th>last_pymnt_d</th>
+        <th>last_pymnt_amnt</th>
+        <th>next_pymnt_d</th>
+        <th>last_credit_pull_d</th>
+        <th>collections_12_mths_ex_med</th>
+        <th>mths_since_last_major_derog</th>
+        <th>policy_code</th>
+        <th>annual_inc_joint</th>
+        <th>dti_joint</th>
+        <th>verification_status_joint</th>
+        <th>application_type</th>
+        <th>acc_now_delinq</th>
+        <th>tot_coll_amt</th>
+        <th>tot_cur_bal</th>
+        <th>open_acc_6m</th>
+        <th>open_il_6m</th>
+        <th>open_il_12m</th>
+        <th>open_il_24m</th>
+        <th>mths_since_rcnt_il</th>
+        <th>total_bal_il</th>
+        <th>il_util</th>
+        <th>open_rv_12m</th>
+        <th>open_rv_24m</th>
+        <th>max_bal_bc</th>
+        <th>all_util</th>
+        <th>total_rev_hi_lim</th>
+        <th>inq_fi</th>
+        <th>total_cu_tl</th>
+        <th>inq_last_12m</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for checkin in checkins %}
+      <tr>
+        <td>{{ checkin.id }}</td>
+        <td>{{ checkin.member_id }}</td>
+        <td>{{ checkin.loan_amnt }}</td>
+        <td>{{ checkin.funded_amnt }}</td>
+        <td>{{ checkin.funded_amnt_inv }}</td>
+        <td>{{ checkin.term }}</td>
+        <td>{{ checkin.int_rate }}</td>  
+        <td>{{ checkin.installment }}</td>
+        <td>{{ checkin.grade }}</td>
+        <td>{{ checkin.sub_grade }}</td>
+        <td>{{ checkin.emp_title }}</td>
+        <td>{{ checkin.emp_length }}</td>
+        <td>{{ checkin.home_ownership }}</td>
+        <td>{{ checkin.annual_inc }}</td>
+        <td>{{ checkin.verification_status }}</td>
+        <td>{{ checkin.issue_d }}</td>
+        <td>{{ checkin.loan_status }}</td>
+        <td>{{ checkin.pymnt_plan }}</td>
+        <td>{{ checkin.purpose }}</td>
+        <td>{{ checkin.zip_code }}</td>
+        <td>{{ checkin.addr_state }}</td>
+        <td>{{ checkin.dti }}</td>
+        <td>{{ checkin.delinq_2yrs }}</td>
+        <td>{{ checkin.earliest_cr_line }}</td>
+        <td>{{ checkin.inq_last_6mths }}</td>
+        <td>{{ checkin.mths_since_last_delinq }}</td>
+        <td>{{ checkin.mths_since_last_record }}</td>
+        <td>{{ checkin.open_acc }}</td>
+        <td>{{ checkin.pub_rec }}</td>
+        <td>{{ checkin.revol_bal }}</td>
+        <td>{{ checkin.revol_util }}</td>
+        <td>{{ checkin.total_acc }}</td>
+        <td>{{ checkin.initial_list_status }}</td>
+        <td>{{ checkin.out_prncp }}</td>
+        <td>{{ checkin.out_prncp_inv }}</td>
+        <td>{{ checkin.total_pymnt }}</td>
+        <td>{{ checkin.total_pymnt_inv }}</td>
+        <td>{{ checkin.total_rec_prncp }}</td>
+        <td>{{ checkin.total_rec_int }}</td>
+        <td>{{ checkin.total_rec_late_fee }}</td>
+        <td>{{ checkin.recoveries }}</td>
+        <td>{{ checkin.collection_recovery_fee }}</td>
+        <td>{{ checkin.last_pymnt_d }}</td>
+        <td>{{ checkin.last_pymnt_amnt }}</td>
+        <td>{{ checkin.next_pymnt_d }}</td>
+        <td>{{ checkin.last_credit_pull_d }}</td>
+        <td>{{ checkin.collections_12_mths_ex_med }}</td>
+        <td>{{ checkin.mths_since_last_major_derog }}</td>
+        <td>{{ checkin.policy_code }}</td>
+        <td>{{ checkin.annual_inc_joint }}</td>
+        <td>{{ checkin.dti_joint }}</td>
+        <td>{{ checkin.verification_status_joint }}</td>
+        <td>{{ checkin.application_type }}</td>
+        <td>{{ checkin.acc_now_delinq }}</td>
+        <td>{{ checkin.tot_coll_amt }}</td>
+        <td>{{ checkin.tot_cur_bal }}</td>
+        <td>{{ checkin.open_acc_6m }}</td>
+        <td>{{ checkin.open_il_6m }}</td>
+        <td>{{ checkin.open_il_12m }}</td>
+        <td>{{ checkin.open_il_24m }}</td>
+        <td>{{ checkin.mths_since_rcnt_il }}</td>
+        <td>{{ checkin.total_bal_il }}</td>
+        <td>{{ checkin.il_util }}</td>
+        <td>{{ checkin.open_rv_12m }}</td>
+        <td>{{ checkin.open_rv_24m }}</td>
+        <td>{{ checkin.max_bal_bc }}</td>
+        <td>{{ checkin.all_util }}</td>
+        <td>{{ checkin.total_rev_hi_lim }}</td>
+        <td>{{ checkin.inq_fi }}</td>
+        <td>{{ checkin.total_cu_tl }}</td>
+        <td>{{ checkin.inq_last_12m }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}
+
